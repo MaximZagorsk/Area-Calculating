@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Area_Calculating</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Class\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Test\" />
+  </ItemGroup>
+
+</Project>
