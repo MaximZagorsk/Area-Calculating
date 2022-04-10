@@ -1,4 +1,5 @@
-﻿using Area_Calculating.Interface;
+﻿using Area_Calculating.Exceptions;
+using Area_Calculating.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,12 @@ namespace Area_Calculating.Class
         //Периметр
         public double Perimeter { get; private set; }
 
-        public Triangle(double a, double b, double c, double cornerA = 0, double cornerB = 0, double cornerC = 0 ) {
+        public Triangle(double a, double b, double c, double cornerA = 0, double cornerB = 0, double cornerC = 0) {
+            if (a < 0 || b < 0 || c < 0 || cornerA < 0 || cornerB < 0 || cornerC < 0)
+                throw new NegativeVariableException("Стороны и углы треугольника не могут быть отрицательными");
+
+            if (cornerA + cornerB + cornerC > 180)
+                throw new ArgumentOutOfRangeException("Сумма углов треугольника не может быть больше 180 градусов");
             A = a;
             B = b;
             C = c;
@@ -55,7 +61,7 @@ namespace Area_Calculating.Class
         public bool isRightTriangleCalculate()
         {
             // Проверка по теореме Пифагора(сумма квадратов катетов равна квадрату длины гипотенузы)
-            // Три варианта проверки проведены по той причине, что мы не знаем какие стороны являются катетами, а какая - гипотенузой
+            // Три варианта проверки проведены по той причине, что мы не знаем какие стороны являются катетами, а какая гипотенузой
             if (C == Math.Sqrt(Math.Pow(A, 2) + Math.Pow(B, 2)))
                 isRightTriangle = true;
             else if (A == Math.Sqrt(Math.Pow(C, 2) + Math.Pow(B, 2)))

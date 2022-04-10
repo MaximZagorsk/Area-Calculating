@@ -1,4 +1,5 @@
-﻿using Area_Calculating.Interface;
+﻿using Area_Calculating.Exceptions;
+using Area_Calculating.Interface;
 using System;
 
 namespace Area_Calculating
@@ -16,6 +17,8 @@ namespace Area_Calculating
         // Конструктор класса Circle. Задается обязательный параметр радиуса и вычисляется диаметр для дальнейшего вычисления площади
         public Cirсle(double radius)
         {
+            if (radius < 0)
+                throw new NegativeVariableException("Радиус окружности не может быть отрицательным");
             Radius = radius;
             Diameter = 2 * radius;
         }
