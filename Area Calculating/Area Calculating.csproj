@@ -6,8 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Class\" />
-    <Folder Include="Interface\" />
     <Folder Include="Test\" />
   </ItemGroup>
 
