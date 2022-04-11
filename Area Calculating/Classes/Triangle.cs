@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Area_Calculating.Class
 {
+    // Переменные класса сделаны c приватными set для защиты от искажения параметров фигуры.
     class Triangle : IShape
     {
         // Стороны

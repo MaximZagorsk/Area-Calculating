@@ -41,7 +41,7 @@ namespace Area_Calculating
         public double CalculateAreaByDiameter()
         {
             Area = (Math.PI * Math.Pow(Diameter, 2))/4;
-            return Perimeter;
+            return Area;
         }
 
     }
