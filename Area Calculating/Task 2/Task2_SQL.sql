@@ -1,9 +1,9 @@
 SELECT
 	p.product_name,
-    	c.category_name
+        c.category_name
 FROM  
-	db.correspondence_products_and_categories cpac
-LEFT OUTER JOIN 
-	db.products p ON  p.id = cpac.product_id
-LEFT OUTER JOIN 
-	db.categories c ON cpac.category_id = c.id;
+	products p
+LEFT JOIN 
+	correspondence_categories_and_products cpac ON  p.id = cpac.product_id
+LEFT JOIN
+	categories c ON cpac.category_id = c.id;
